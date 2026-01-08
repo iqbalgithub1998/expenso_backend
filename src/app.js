@@ -16,5 +16,8 @@ app.use("/api/expenses", expenseRoutes);
 app.use("/api/friends", friendRoutes);
 app.use("/api/transactions", transactionRoutes);
 app.use("/api/analytics", analyticsRoutes);
+app.get("/health", (req, res) =>
+  res.json({ status: "ok", message: "Healthy", data: new Date().toString() })
+);
 
 export default app;
