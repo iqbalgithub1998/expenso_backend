@@ -20,7 +20,7 @@ async function connectToMongoDb() {
 
 app.use((req, res, next) => {
   if (!isConnected) {
-    connectDB();
+    connectToMongoDb();
   }
   next();
 });
